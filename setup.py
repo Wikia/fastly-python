@@ -1,12 +1,14 @@
 import os
-from setuptools import setup
+from distutils.core import setup
 
-def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+here = os.path.abspath(os.path.dirname(__file__))
+
+with open(os.path.join(here, 'README.rst'), 'rb') as f:
+    long_description = f.read().decode('utf-8')
 
 setup(
 	name = "fastly-python",
-	version = "1.0.4",
+	version = "1.0.4-wikia-pypi-test1",
 	author = "Chris Zacharias",
 	author_email = "chris@imgix.com",
 	description = ("A Python client libary for the Fastly API."),
@@ -15,8 +17,9 @@ setup(
 	url = "https://github.com/zebrafishlabs/fastly-python",
 	packages=['fastly', 'tests'],
 	scripts=['bin/fastly_upload_vcl.py', 'bin/fastly_purge_url.py'],
-	long_description=read('README.md'),
-	classifiers=[
+	long_description=long_description,
+        install_requires=['httplib2'],
+        classifiers=[
 		"Development Status :: 3 - Alpha",
 		"Topic :: Software Development :: Libraries :: Python Modules",
 		"License :: OSI Approved :: BSD License",
