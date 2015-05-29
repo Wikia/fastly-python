@@ -8,7 +8,7 @@ with open(os.path.join(here, 'README.rst'), 'rb') as f:
 
 setup(
 	name = "fastly-python",
-	version = "1.0.4-wikia-pypi-test1",
+	version = "1.0.4",
 	author = "Chris Zacharias",
 	author_email = "chris@imgix.com",
 	description = ("A Python client libary for the Fastly API."),
